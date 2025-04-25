@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Career Guidance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAOBSOwiXfMj2UbstumcjowJK5ScgqSldo",
+      authDomain: "careerguide-34070.firebaseapp.com",
+      projectId: "careerguide-34070",
+      storageBucket: "careerguide-34070.appspot.com",
+      messagingSenderId: "999735426701",
+      appId: "1:999735426701:web:1673ea7c47694f147d2cc4",
+      measurementId: "G-X1HL90HV87"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" autocomplete="email" required>
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>  <New Sign-Up Link -->
+  <!-- </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          document.getElementById("message").textContent = "Login successful!";
+          document.getElementById("message").style.color = "green";
+        })
+        .catch((error) => {
+          document.getElementById("message").textContent = error.message;
+          document.getElementById("message").style.color = "red";
+        });
+    });
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Career Guidance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAOBSOwiXfMj2UbstumcjowJK5ScgqSldo",
+      authDomain: "careerguide-34070.firebaseapp.com",
+      projectId: "careerguide-34070",
+      storageBucket: "careerguide-34070.appspot.com",
+      messagingSenderId: "999735426701",
+      appId: "1:999735426701:web:1673ea7c47694f147d2cc4",
+      measurementId: "G-X1HL90HV87"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" autocomplete="email" required>
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+  </div>
+
+  <!-- Link to your external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+

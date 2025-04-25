@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | Career Guidance</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ Firebase v8 SDK (Global firebase object available) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+  <script>
+    // ✅ Your Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAOBSOwiXfMj2UbstumcjowJK5ScgqSldo",
+      authDomain: "careerguide-34070.firebaseapp.com",
+      projectId: "careerguide-34070",
+      storageBucket: "careerguide-34070.appspot.com",
+      messagingSenderId: "999735426701",
+      appId: "1:999735426701:web:1673ea7c47694f147d2cc4",
+      measurementId: "G-X1HL90HV87"
+    };
+    // ✅ Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="email" placeholder="Email" id="email" required>
+      <input type="password" placeholder="Password" id="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p id="message"></p>
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+  </div>
+
+  <!-- ✅ JavaScript to handle sign-up -->
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          document.getElementById("message").textContent = "Sign-up successful!";
+          document.getElementById("message").style.color = "green";
+        })
+        .catch((error) => {
+          document.getElementById("message").textContent = error.message;
+          document.getElementById("message").style.color = "red";
+        });
+    });
+  </script>
+</body>
+</html>
