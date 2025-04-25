@@ -163,6 +163,9 @@
   <script>
     document.getElementById("careerForm").addEventListener("submit", function (e) {
       e.preventDefault();
+      
+      const loader = document.getElementById("loader");
+      loader.style.display = "block";
 
       const form = e.target;
       const formData = {
@@ -186,20 +189,31 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
-
       .then((res) => res.json())
       .then((data) => {
+        loader.style.display = "none";
+        console.log("result"+data)
         if (data.career) {
-          alert("🎯 Recommended Career: " + data.career);
+        // Save result and go to results page
+        console.log("in if"+data.career)
+          localStorage.setItem("recommendedCareer", data.career);
+          window.location.href = "result.html";
         } else {
           alert("❌ Error: " + (data.error || "Unexpected error"));
+          console.log("in else")
         }
       })
       .catch((err) => {
+        console.log("in catch")
+        loader.style.display = "none";
         alert("❌ Failed to connect to the backend.");
         console.error(err);
       });
     });
   </script>
+  <div id="loader" style="display:none; text-align:center; margin-top:20px;">
+    <p>🔍 Analyzing your inputs...</p>
+  </div>
+  
 </body>
 </html>
