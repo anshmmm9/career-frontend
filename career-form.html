@@ -184,7 +184,7 @@
       fetch("https://your-backend-name.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userInput),
+        body: JSON.stringify(formData),
       })
 
       .then((res) => res.json())
